@@ -12,11 +12,11 @@ async function carregarPagina(pagina){
         
         const ntml = await resposta.text();
 
-        document.getElementById("conteudo").innerHTML = ´
+        document.getElementById("conteudo").innerHTML = `
 
     }catch(erro){
     
-        document.getElementById("conteudo").innerHTML = ´
+        document.getElementById("conteudo").innerHTML = `
             <h2>Erro</h2>
             <p>Não foi possível carregar a página.</p>
         `;
