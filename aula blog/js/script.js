@@ -1,33 +1,32 @@
-//js/script.js
+ // js/script.js
 
 async function carregarPagina(pagina){
 
-     try{
-       
-        const resposta = await fetch(pagina);
+    try{
+
+        const reposta = await fetch(pagina);
 
         if(!resposta.ok){
-            throw new Error("Página não encontraa");
+            throw new Error("pagina não encontrada");
         }
+
+        const html = await resposta.text();
+
+        document.getElementByld("conteudo").innerHTML = html;
+
+    }catch(erro){ 
         
-        const ntml = await resposta.text();
-
-        document.getElementById("conteudo").innerHTML = `
-
-    }catch(erro){
-    
-        document.getElementById("conteudo").innerHTML = `
+        document.getElementById("conteudo").innerHTML =`
             <h2>Erro</h2>
-            <p>Não foi possível carregar a página.</p>
+            <p>Não foi possível carregar página.</p>
         `;
 
         console.error(erro);
-    }
+    }  
 }
 
-/*Página inicial*/
+/* Página inicial */
 
 window.onload = () => {
     carregarPagina('pages/home.html');
-
-        
+};
